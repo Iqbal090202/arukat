@@ -1,0 +1,10 @@
+name: Subjects
+form: $/ibang/tas/models/subject/fields.yaml
+modelClass: Ibang\Tas\Models\Subject
+defaultRedirect: ibang/tas/subjects
+create:
+    redirect: 'ibang/tas/subjects/update/:id'
+    redirectClose: ibang/tas/subjects
+update:
+    redirect: ibang/tas/subjects
+    redirectClose: ibang/tas/subjects

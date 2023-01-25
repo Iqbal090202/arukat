@@ -1,0 +1,11 @@
+name: Level
+modelClass: Ibang\Tas\Models\Level
+form: $/ibang/tas/models/level/fields.yaml
+defaultRedirect: ibang/tas/level
+create:
+    redirect: 'ibang/tas/level/update/:id'
+    redirectClose: ibang/tas/level
+update:
+    redirect: ibang/tas/level
+    redirectClose: ibang/tas/level
+preview: {  }

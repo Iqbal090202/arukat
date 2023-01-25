@@ -1,0 +1,25 @@
+columns:
+    id:
+        label: id
+        type: number
+    text_grade:
+        label: grade
+        type: number
+    time:
+        label: time
+        type: number
+    subject_name:
+        label: subject
+        type: number
+    staff_name:
+        label: staff
+        type: number
+    attendance:
+        label: attendance
+        type: text
+    description:
+        label: description
+        type: text
+    date:
+        label: date
+        type: text

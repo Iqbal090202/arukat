@@ -1,0 +1,11 @@
+name: Majors
+modelClass: Ibang\Tas\Models\Major
+form: $/ibang/tas/models/major/fields.yaml
+defaultRedirect: ibang/tas/majors
+create:
+    redirect: 'ibang/tas/majors/update/:id'
+    redirectClose: ibang/tas/majors
+update:
+    redirect: ibang/tas/majors
+    redirectClose: ibang/tas/majors
+preview: {  }

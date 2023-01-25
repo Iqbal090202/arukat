@@ -1,0 +1,5 @@
+title: 'Reorder Levels'
+modelClass: Ibang\Tas\Models\Level
+nameFrom: level
+toolbar:
+    buttons: reorder_toolbar

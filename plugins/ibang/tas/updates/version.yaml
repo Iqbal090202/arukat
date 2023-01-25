@@ -1,0 +1,40 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table ibang_tas_levels'
+    - builder_table_create_ibang_tas_levels.php
+1.0.3:
+    - 'Created table ibang_tas_majors'
+    - builder_table_create_ibang_tas_majors.php
+1.0.4:
+    - 'Created table ibang_tas_grades'
+    - builder_table_create_ibang_tas_grades.php
+1.0.5:
+    - 'Created table ibang_tas_staff'
+    - builder_table_create_ibang_tas_staffs.php
+1.0.6:
+    - 'Created table ibang_tas_subject'
+    - builder_table_create_ibang_tas_subjects.php
+1.0.7:
+    - 'Created table ibang_tas_subjects_staff'
+    - builder_table_create_ibang_tas_subjects_staffs.php
+1.0.8:
+    - 'Created table ibang_tas_schedules'
+    - builder_table_create_ibang_tas_schedules.php
+1.0.9:
+    - 'Created table ibang_tas_attendance'
+    - builder_table_create_ibang_tas_attendances.php
+1.0.10:
+    - 'Fix all table'
+1.0.11:
+    - 'Updated table ibang_tas_subjects_staffs'
+    - builder_table_update_ibang_tas_subjects_staffs.php
+1.0.12:
+    - 'Updated table ibang_tas_attendances'
+    - builder_table_update_ibang_tas_attendances.php
+1.0.13:
+    - 'Created table ibang_tas_report'
+    - builder_table_create_ibang_tas_report.php
+1.0.14:
+    - 'Updated table ibang_tas_report'
+    - builder_table_update_ibang_tas_reports.php

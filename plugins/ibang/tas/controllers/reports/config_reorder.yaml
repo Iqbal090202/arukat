@@ -1,0 +1,4 @@
+title: Reports
+modelClass: Ibang\Tas\Models\Report
+toolbar:
+    buttons: reorder_toolbar

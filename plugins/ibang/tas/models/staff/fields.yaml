@@ -1,0 +1,23 @@
+fields:
+    nip:
+        label: NIP
+        span: auto
+        type: text
+        required: 1
+    position:
+        label: Group
+        span: auto
+        type: text
+        required: 1
+    name:
+        label: Name
+        span: auto
+        type: text
+        required: 1
+    subject:
+        label: Subject
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+        required: 1

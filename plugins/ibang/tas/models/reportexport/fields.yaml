@@ -1,0 +1,18 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    year:
+        label: Year
+        type: dropdown
+        span: left
+        options: getYearOptions
+
+    month:
+        label: Month
+        type: dropdown
+        span: right
+        options: getMonthOptions
+

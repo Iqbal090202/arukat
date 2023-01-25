@@ -1,0 +1,10 @@
+name: Grades
+form: $/ibang/tas/models/grade/fields.yaml
+modelClass: Ibang\Tas\Models\Grade
+defaultRedirect: ibang/tas/grades
+create:
+    redirect: 'ibang/tas/grades/update/:id'
+    redirectClose: ibang/tas/grades
+update:
+    redirect: ibang/tas/grades
+    redirectClose: ibang/tas/grades

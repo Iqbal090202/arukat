@@ -1,0 +1,6 @@
+fields:
+    major:
+        label: Major
+        span: auto
+        type: text
+        required: 1

@@ -1,0 +1,20 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    staff:
+        # Filter name
+        label: Staff
+        # Model Class name
+        modelClass: Ibang\TAS\Models\Staff
+        # Model attribute to display for the name
+        nameFrom: name
+        # Filter scope
+        scope: filterByStaff
+
+    created_at:
+        label: Registered
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'

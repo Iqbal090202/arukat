@@ -1,0 +1,78 @@
+plugin:
+    name: 'ibang.tas::lang.plugin.name'
+    description: 'ibang.tas::lang.plugin.description'
+    author: ibang
+    icon: oc-icon-list-alt
+    homepage: ''
+permissions:
+    managelevel:
+        tab: managelevel
+        label: 'Manage Level'
+    managemajor:
+        tab: managemajor
+        label: 'Manage Major'
+    managegrade:
+        tab: managegrade
+        label: 'Manage Grade'
+    managesubject:
+        tab: managesubject
+        label: 'Manage Subject'
+    managestaff:
+        tab: managestaff
+        label: 'Manage Staff'
+    manageschedule:
+        tab: manageschedule
+        label: 'Manage Schedule'
+    managesattendance:
+        tab: managesattendance
+        label: 'Manages Attendance'
+    managereport:
+        tab: managereport
+        label: 'Manage Report'
+navigation:
+    master:
+        label: Master
+        url: ibang/tas/level
+        icon: icon-life-ring
+        sideMenu:
+            level:
+                label: Level
+                url: ibang/tas/level
+                icon: icon-level-up
+            major:
+                label: Major
+                url: ibang/tas/majors
+                icon: icon-dropbox
+            grade:
+                label: Grade
+                url: ibang/tas/grades
+                icon: icon-align-justify
+            subject:
+                label: Subject
+                url: ibang/tas/subjects
+                icon: icon-archive
+            Staff:
+                label: Staff
+                url: ibang/tas/staffs
+                icon: icon-mortar-board
+    schedule:
+        label: Schedule
+        url: ibang/tas/schedules
+        icon: icon-calendar
+        sideMenu:
+            addschedule:
+                label: 'Add Schedule'
+                url: ibang/tas/schedules/create
+                icon: icon-plus
+            listschedule:
+                label: 'List Schedule'
+                url: ibang/tas/schedules
+                icon: icon-calendar
+            listattendance:
+                label: Attendance
+                url: ibang/tas/attendances
+                icon: icon-sitemap
+            listreport:
+                label: Report
+                url: ibang/tas/reports
+                icon: icon-file

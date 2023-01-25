@@ -1,0 +1,23 @@
+columns:
+    id:
+        label: id
+        type: text
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    major[major]:
+        label: major
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime

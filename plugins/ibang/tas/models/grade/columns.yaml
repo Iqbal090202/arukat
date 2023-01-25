@@ -1,0 +1,28 @@
+columns:
+    id:
+        label: id
+        type: number
+    level[level]:
+        label: level
+        type: number
+    major[major]:
+        label: major
+        type: number
+    grade:
+        label: grade
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime
+    sort_order:
+        label: sort_order
+        type: number
+    text_grade:
+        label: text grade
+        type: text

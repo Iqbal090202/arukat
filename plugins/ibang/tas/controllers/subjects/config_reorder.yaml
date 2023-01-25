@@ -1,0 +1,5 @@
+title: Subjects
+modelClass: Ibang\Tas\Models\Subject
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

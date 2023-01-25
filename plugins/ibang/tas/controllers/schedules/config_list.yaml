@@ -1,0 +1,13 @@
+title: Schedules
+modelClass: Ibang\Tas\Models\Schedule
+list: $/ibang/tas/models/schedule/columns.yaml
+recordUrl: 'ibang/tas/schedules/update/:id'
+noRecordsMessage: 'backend::lang.li st.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+filter: config_filter.yaml
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

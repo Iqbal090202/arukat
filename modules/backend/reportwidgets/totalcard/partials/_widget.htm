@@ -1,0 +1,16 @@
+<div class="report-widget widget-welcome">
+    <h3><?= e(trans($this->property('title'))) ?></h3>
+
+    <?php if (!isset($error)): ?>
+        <div class="welcome-container">
+            <h1><?= $totalMajor ?></h1>
+        </div>
+        <div class="seeall-container">
+            <a href="<?= $urlSeeAll ?>">See all</a>
+        </div>
+    <?php else: ?>
+        <div class="callout callout-warning">
+            <div class="content"><?= e($error) ?></div>
+        </div>
+    <?php endif ?>
+</div>

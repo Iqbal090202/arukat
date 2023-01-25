@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+.m-r-auto {
+    margin-right: auto;
+}
+
+.fs-18 {
+    font-size: 1.8em;
+}
+
+.fs-25 {
+    font-size: 2.5em;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-bolder {
+    font-weight: bolder;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-black {
+    color: #000;
+}
+
+.text-black-3 {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.lh-normal {
+    line-height: normal;
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.arukat-header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    background: linear-gradient(
+        180deg,
+        rgba(5, 66, 225, 0.79) 0%,
+        rgba(5, 66, 225, 0.4187) 71.87%
+    );
+    justify-content: space-between;
+    /* filter: blur(1px); */
+}
+
+.header-datetime {
+    display: flex;
+    flex-direction: column;
+    font-size: .8em;
+    /* margin-right: auto; */
+}
+
+.header-logo {
+    width: 50px;
+}
+
+.arukat-home {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    padding: 30px;
+}
+
+.arukat-card-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.arukat-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 30px;
+    /* border: 1px solid rgba(red, green, blue, alpha); */
+    border-radius: 15px;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.arukat-card-image {
+    width: 25%;
+}
+
+.arukat-list-time{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.arukat-list-time-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+}
+
+.arukat-btn-card-container {
+    display: flex;
+    column-gap: 10px;
+}
+
+.arukat-btn {
+    border: none;
+    padding: 0 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.btn-disabled {
+    background-color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+.btn-success {
+    background-color: #4EE04BE0;
+}
+
+.btn-danger {
+    background-color: #E04B4BE0;
+}
+
+.btn-primary {
+    background-color: #0542E1E0;
+}
+
+.arukat-desc-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.arukat-desc-input, .arukat-desc-input input {
+    width: 100%;
+}
+
+.arukat-desc-input input {
+    width: 100%;
+    background-color: #664C4C0F;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+}
+
+
+@media screen and (max-width: 540px) {
+    body {
+        font-size: 11px;
+    }
+    .header-logo {
+        width: 30px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .arukat-card-container {
+        width: 40%;
+    }
+}

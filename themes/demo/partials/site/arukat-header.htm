@@ -1,0 +1,31 @@
+{##}
+<div class="arukat-header text-white">
+    <div style="display: flex;">
+        <div>
+            <img
+                src="{{ 'assets/images/logo/arukat-logo-circle.png'|theme }}"
+                class="header-logo"
+            />
+        </div>
+        <div class="d-flex flex-column m-l-sm">
+            <div class="fw-bolder fs-18 lh-normal text-upper">Arukat</div>
+            <div class="fw-700">Absensi Guru Nekat</div>
+        </div>
+    </div>
+    <div style="display: flex; align-items: center;">
+        <div class="header-datetime m-r-sm">
+            <div class="fw-700" id="dateNow">-</div>
+            <div class="fw-bolder fs-25 lh-normal" id="timeNow">-</div>
+        </div>
+        <a
+            data-request="onLogout"
+            data-request-data="redirect: '/login'"
+            class="cursor-pointer"
+        >
+            <img
+                src="{{ 'assets/images/user-default.png'|theme }}"
+                class="header-logo"
+            />
+        </a>
+    </div>
+</div>

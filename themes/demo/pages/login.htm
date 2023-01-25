@@ -1,0 +1,55 @@
+title = "Login"
+url = "/login"
+layout = "arukat"
+is_hidden = 0
+
+[account]
+redirect = "home"
+paramCode = "code"
+activationPage = "ajax"
+forceSecure = 0
+requirePassword = 0
+
+[session]
+security = "guest"
+redirect = "/"
+==
+<?php
+function onStart() {
+    $this->addCss('assets/css/login.css');
+}
+?>
+==
+{##}
+<div class="layout-login">
+    <div class="logo-container">
+        <img
+            src="{{ 'assets/images/logo/arukat-logo.png'|theme }}"
+            class="img-logo"
+        />
+    </div>
+    <div class="title-container">
+        <div class="fs-25 fw-700 text-black">Selamat Datang</div>
+        <div class="fw-700 text-black-3">Silahkan Login Terlebih dahulu</div>
+    </div>
+    <div class="form-container">
+        {% component 'account' %}
+        {# <div class="form-group">
+            <input
+                type="text"
+                class="form-control"
+                name="login"
+                placeholder="Username"
+            />
+        </div>
+        <div class="form-group">
+            <input
+                type="password"
+                class="form-control"
+                name="password"
+                placeholder="Password"
+            />
+        </div>
+        <button type="submit" class="btn btn-arukat m-t-sm">LOG IN</button> #}
+    </div>
+</div>

@@ -1,0 +1,13 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+        required: 1
+    major:
+        label: Major
+        nameFrom: major
+        descriptionFrom: description
+        span: auto
+        type: relation
+        required: 1

@@ -1,0 +1,10 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+export:
+    title: Export Attendances
+    modelClass: Ibang\TAS\Models\AttendanceExport
+    list: $/ibang/tas/models/attendance/columns_export.yaml
+    redirect: /ibang/tas/attendances
+    fileName: scf-export.csv

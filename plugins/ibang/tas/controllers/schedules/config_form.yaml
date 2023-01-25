@@ -1,0 +1,11 @@
+name: Schedules
+modelClass: Ibang\Tas\Models\Schedule
+form: $/ibang/tas/models/schedule/fields.yaml
+defaultRedirect: ibang/tas/schedules
+create:
+    redirect: 'ibang/tas/schedules/update/:id'
+    redirectClose: ibang/tas/schedules
+update:
+    redirect: ibang/tas/schedules
+    redirectClose: ibang/tas/schedules
+preview: {  }

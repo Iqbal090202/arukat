@@ -1,0 +1,5 @@
+title: Staffs
+modelClass: Ibang\Tas\Models\Staff
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

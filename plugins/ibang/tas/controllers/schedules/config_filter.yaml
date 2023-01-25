@@ -1,0 +1,20 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    grade:
+        label: Grade
+        modelClass: Ibang\TAS\Models\Grade
+        nameFrom: text_grade
+        scope: filterByGrade
+    day:
+        label: Day
+        type: group
+        conditions: day in (:filtered)
+        options:
+            senin: 'Senin'
+            selasa: 'Selasa'
+            rabu: 'Rabu'
+            kamis: 'Kamis'
+            jumat: 'Jumat'

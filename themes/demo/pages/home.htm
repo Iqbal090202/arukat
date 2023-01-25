@@ -1,0 +1,175 @@
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use Ibang\TAS\Models\Schedule;
+use Ibang\TAS\Models\Attendance;
+use Ibang\TAS\Models\Report;
+use Carbon\Carbon;
+
+function onStart()
+{
+    $user = Auth::getUser();
+    $grade_id = $user->grade_id;
+    $day = $this->getDay(date('D'));
+    $schedules = Schedule::where('grade_id', $grade_id)->where('day', $day)->get();
+    $attendances = Attendance::where('date', date('Y-m-d'))->where('user_id', $user->id)->get();
+
+    $schedules->each(function($item) use($attendances) {
+        if (count($attendances) > 0) {
+            if($attendances->where('schedule_id', $item->id)->count() > 0) {
+                $item->status = true;
+            } else {
+                $item->status = false;
+            }
+        } else {
+            $item->status = false;
+        }
+    });
+    $this['schedules'] = $schedules->groupBy('subject_id');
+}
+
+function getDay($d) {
+    switch($d){
+		case 'Sun':
+			$day = "Minggu";
+		break;
+
+		case 'Mon':
+			$day = "Senin";
+		break;
+
+		case 'Tue':
+			$day = "Selasa";
+		break;
+
+		case 'Wed':
+			$day = "Rabu";
+		break;
+
+		case 'Thu':
+			$day = "Kamis";
+		break;
+
+		case 'Fri':
+			$day = "Jumat";
+		break;
+
+		case 'Sat':
+			$day = "Sabtu";
+		break;
+
+		default:
+			$day = "Tidak di ketahui";
+		break;
+    }
+    return $day;
+}
+
+function onAbsen() {
+    $user_id = Auth::getUser()->id;
+    $schedule_id = post('schedule_id');
+    $attendance = post('attendance');
+
+    $data = new Attendance;
+    $data->user_id = $user_id;
+    $data->schedule_id = $schedule_id;
+    $data->attendance = $attendance;
+    $data->description = '';
+    $data->date = date('Y-m-d');
+    $data->save();
+
+    $this->saveReport($schedule_id);
+}
+
+function onSendMessange() {
+    $schedule_id = explode (",", Input::get('schedule_id'));
+
+    for ($i=0; $i < count($schedule_id); $i++) {
+        $data = Attendance::where('schedule_id', $schedule_id[$i])->where('date', date('Y-m-d'))->first();
+        $data->description = Input::get('description');
+        $data->save();
+        $this->saveReport($schedule_id[$i]);
+    }
+}
+
+function saveReport($schedule_id) {
+    $date = date('Y-m-d');
+    $total_present = 0;
+    $total_absent = 0;
+
+    $staff_id = Schedule::find($schedule_id)->staff->id;
+    $attendances = Attendance::where('date', $date)->whereHas('schedule', function($schedules) use($staff_id) {
+        $schedules->where('staff_id', $staff_id);
+    })->get();
+
+    for ($i=0; $i < count($attendances); $i++) {
+        if ($attendances[$i]->attendance == 'hadir') {
+            $total_present += 1;
+        } else {
+            if ($attendances[$i]->description) {
+                $total_present += .5;
+            } else {
+                $total_absent += 1;
+            }
+        }
+    }
+    $attendance_report = $total_present != 0 ? ($total_present >= (count($attendances) / 2) ? 1 : 2) : 0;
+    // dd($total_present, $total_absent, $attendance);
+
+    $report = Report::where('staff_id', $staff_id)->where('date', $date)->first();
+    if (!$report) {
+        $report = new Report;
+    }
+    $report->staff_id = $staff_id;
+    $report->total_present = ceil($total_present);
+    $report->total_absent = $total_absent;
+    $report->attendance = $attendance_report;
+    $report->date = $date;
+    $report->save();
+}
+?>
+==
+{##}
+{# {{dump(schedules)}} #}
+<div class="arukat-home">
+    <div class="arukat-card-container">
+        {% for schedule in schedules %}
+        <div class="arukat-card">
+            <div class="fw-bolder fs-25">{{schedule.0.subject.name}}</div>
+            <div class="arukat-card-image m-y-sm">
+                <img
+                    src="{{ 'assets/images/user-default.png'|theme }}"
+                    class="user-default-img"
+                />
+            </div>
+            <div class="fw-700">{{schedule.0.staff.name}}</div>
+            <div class="arukat-list-time">
+                {% set sch_ids = [] %}
+                {% for sch in schedule %}
+                    {% set sch_ids = sch_ids|merge([sch.id]) %}
+                    <div class="arukat-list-time-item">
+                        <div>Jam {{ loop.index }}</div>
+                        <div>{{ sch.time }}</div>
+                        <div class="arukat-btn-card-container">
+                            <button class="arukat-btn {{sch.status ? 'btn-disabled' : 'btn-success'}}" data-request="onAbsen" data-request-data="schedule_id: {{ sch.id }}, attendance: 'hadir'" data-request-success="$(this).parent().children('button').removeClass('btn-success btn-danger').addClass('btn-disabled')">Masuk</button>
+                            <button class="arukat-btn {{sch.status ? 'btn-disabled' : 'btn-danger'}}" data-request="onAbsen" data-request-data="schedule_id: {{ sch.id }}, attendance: 'absen'" data-request-success="$(this).parent().children('button').removeClass('btn-success btn-danger').addClass('btn-disabled')">Absen</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {{ form_ajax('onSendMessange', { class: 'arukat-desc-form'}) }}
+                <input type="hidden" name="schedule_id" value="{{sch_ids|join(',')}}" />
+                <div class="arukat-desc-input">
+                    <input type="text" name="description" placeholder="Tulis sesuatu untuk guru mu ..." />
+                </div>
+                <div>
+                    <button type="submit" class="arukat-btn btn-primary">Kirim</button>
+                </div>
+            {{ form_close() }}
+        </div>
+        {% endfor %}
+    </div>
+</div>

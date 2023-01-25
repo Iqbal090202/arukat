@@ -1,0 +1,15 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    staff:
+        label: Staff
+        type: group
+        conditions: staff_id in (:filtered)
+        modelClass: Ibang\Tas\Models\Staff
+        options: getStaffOptions
+    date:
+        label: Date
+        type: daterange
+        conditions: date >= ':afterDate' AND date <= ':beforeDate'

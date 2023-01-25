@@ -1,0 +1,11 @@
+name: Staffs
+modelClass: Ibang\Tas\Models\Staff
+form: $/ibang/tas/models/staff/fields.yaml
+defaultRedirect: ibang/tas/staffs
+create:
+    redirect: 'ibang/tas/staffs/update/:id'
+    redirectClose: ibang/tas/staffs
+update:
+    redirect: ibang/tas/staffs
+    redirectClose: ibang/tas/staffs
+preview: {  }

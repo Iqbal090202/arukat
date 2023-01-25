@@ -1,0 +1,5 @@
+1.0.1: First version of Profile
+1.0.2:
+    - Add grade field to users & update email field
+    - add_grade_field_to_users_table.php
+    - update_email_field_from_users_table.php

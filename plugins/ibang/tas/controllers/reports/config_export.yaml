@@ -1,0 +1,11 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+export:
+    title: Export Reports
+    modelClass: Ibang\TAS\Models\ReportExport
+    list: $/ibang/tas/models/report/columns_export.yaml
+    form: $/ibang/tas/models/reportexport/fields.yaml
+    redirect: /ibang/tas/reports
+    fileName: report-export.csv

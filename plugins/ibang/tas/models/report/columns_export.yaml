@@ -1,0 +1,28 @@
+columns:
+    name:
+        label: Nama
+        type: text
+    nip:
+        label: NIP
+        type: text
+    position:
+        label: Pangkat
+        type: number
+    total_present:
+        label: Total Hadir Full
+        type: number
+    total_present2:
+        label: Total Hadir Tidak Full
+        type: number
+    total_absent:
+        label: Total Absen
+        type: number
+    total_schedule:
+        label: Total Jadwal
+        type: number
+    persentasi:
+        label: Persentasi Hadir
+        type: text
+    persentasi_absent:
+        label: Persentasi Absen
+        type: text

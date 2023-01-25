@@ -1,0 +1,5 @@
+title: Majors
+modelClass: Ibang\Tas\Models\Major
+nameFrom: major
+toolbar:
+    buttons: reorder_toolbar

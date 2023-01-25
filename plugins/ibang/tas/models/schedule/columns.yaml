@@ -1,0 +1,31 @@
+columns:
+    id:
+        label: id
+        type: number
+    subject[name]:
+        label: subject
+        type: number
+    staff[name]:
+        label: staff
+        type: number
+    grade[text_grade]:
+        label: grade
+        type: number
+    day:
+        label: day
+        type: text
+    time:
+        label: time
+        type: text
+    sort_order:
+        label: sort_order
+        type: number
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime

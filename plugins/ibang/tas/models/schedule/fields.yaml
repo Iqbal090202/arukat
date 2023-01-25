@@ -1,0 +1,55 @@
+fields:
+    grade:
+        label: Grade
+        nameFrom: text_grade
+        descriptionFrom: description
+        span: auto
+        type: relation
+        required: 1
+    day:
+        label: Day
+        options:
+            senin: Senin
+            selasa: Selasa
+            rabu: Rabu
+            kamis: Kamis
+            jumat: Jumat
+            sabtu: Sabtu
+        showSearch: true
+        span: auto
+        type: dropdown
+        required: 1
+    time@create:
+        label: 'Time'
+        span: left
+        type: checkboxlist
+        options: getTimeOptions
+        required: 1
+    time@update:
+        label: 'Time'
+        span: left
+        type: dropdown
+        options: getTimeOptions
+        required: 1
+    subject:
+        label: Subject
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        type: relation
+        placeholder: '-- select subject --'
+        required: 1
+    staff:
+        label: Staff
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        type: relation
+        scope: filterBySubject
+        dependsOn: subject
+        placeholder: '-- select staff --'
+        trigger:
+            action: hide
+            field: subject
+            condition: 'value[]'
+        required: 1

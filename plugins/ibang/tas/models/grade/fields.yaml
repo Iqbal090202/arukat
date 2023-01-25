@@ -1,0 +1,20 @@
+fields:
+    level:
+        label: Level
+        nameFrom: level
+        descriptionFrom: description
+        span: auto
+        type: relation
+        required: 1
+    major:
+        label: Major
+        nameFrom: major
+        descriptionFrom: description
+        span: auto
+        type: relation
+        required: 1
+    grade:
+        label: Grade
+        span: auto
+        type: text
+        required: 1

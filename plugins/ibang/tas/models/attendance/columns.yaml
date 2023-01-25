@@ -1,0 +1,25 @@
+columns:
+    id:
+        label: id
+        type: number
+    user[grade][text_grade]:
+        label: user
+        type: number
+    schedule[time]:
+        label: time
+        type: number
+    schedule[subject][name]:
+        label: subject
+        type: number
+    schedule[staff][name]:
+        label: staff
+        type: number
+    attendance:
+        label: attendance
+        type: text
+    description:
+        label: description
+        type: text
+    date:
+        label: date
+        type: text

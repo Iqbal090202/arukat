@@ -1,0 +1,31 @@
+columns:
+    id:
+        label: id
+        type: number
+    staff[name]:
+        label: staff name
+        type: number
+    total_present:
+        label: total present
+        type: number
+    total_absent:
+        label: total absent
+        type: number
+    text_attendance:
+        label: attendance
+        type: number
+    date:
+        label: date
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime
+    sort_order:
+        label: sort_order
+        type: number
